@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		70B7FCD71AA7F92000224CF2 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B7FCD61AA7F92000224CF2 /* TabBarViewController.swift */; };
+		70B7FCD91AA7FAC400224CF2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B7FCD81AA7FAC400224CF2 /* HomeViewController.swift */; };
+		70B7FCDB1AA7FACD00224CF2 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B7FCDA1AA7FACD00224CF2 /* SearchViewController.swift */; };
+		70B7FCDD1AA7FAD600224CF2 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B7FCDC1AA7FAD600224CF2 /* ComposeViewController.swift */; };
+		70B7FCDF1AA7FAE600224CF2 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B7FCDE1AA7FAE600224CF2 /* AccountViewController.swift */; };
+		70B7FCE11AA7FAF200224CF2 /* TrendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B7FCE01AA7FAF200224CF2 /* TrendingViewController.swift */; };
 		70EBEE4F1AA67C8F00E5ACF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EBEE4E1AA67C8F00E5ACF4 /* AppDelegate.swift */; };
 		70EBEE541AA67C8F00E5ACF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70EBEE521AA67C8F00E5ACF4 /* Main.storyboard */; };
 		70EBEE561AA67C8F00E5ACF4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70EBEE551AA67C8F00E5ACF4 /* Images.xcassets */; };
@@ -24,6 +30,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		70B7FCD61AA7F92000224CF2 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarViewController.swift; path = ../TabBarViewController.swift; sourceTree = "<group>"; };
+		70B7FCD81AA7FAC400224CF2 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		70B7FCDA1AA7FACD00224CF2 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		70B7FCDC1AA7FAD600224CF2 /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
+		70B7FCDE1AA7FAE600224CF2 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		70B7FCE01AA7FAF200224CF2 /* TrendingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendingViewController.swift; sourceTree = "<group>"; };
 		70EBEE491AA67C8F00E5ACF4 /* Tumblr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tumblr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70EBEE4D1AA67C8F00E5ACF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70EBEE4E1AA67C8F00E5ACF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -73,8 +85,14 @@
 		70EBEE4B1AA67C8F00E5ACF4 /* Tumblr */ = {
 			isa = PBXGroup;
 			children = (
+				70B7FCD61AA7F92000224CF2 /* TabBarViewController.swift */,
 				70EBEE4E1AA67C8F00E5ACF4 /* AppDelegate.swift */,
 				70EBEE521AA67C8F00E5ACF4 /* Main.storyboard */,
+				70B7FCD81AA7FAC400224CF2 /* HomeViewController.swift */,
+				70B7FCDA1AA7FACD00224CF2 /* SearchViewController.swift */,
+				70B7FCDC1AA7FAD600224CF2 /* ComposeViewController.swift */,
+				70B7FCDE1AA7FAE600224CF2 /* AccountViewController.swift */,
+				70B7FCE01AA7FAF200224CF2 /* TrendingViewController.swift */,
 				70EBEE551AA67C8F00E5ACF4 /* Images.xcassets */,
 				70EBEE4C1AA67C8F00E5ACF4 /* Supporting Files */,
 			);
@@ -205,7 +223,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70B7FCE11AA7FAF200224CF2 /* TrendingViewController.swift in Sources */,
+				70B7FCDD1AA7FAD600224CF2 /* ComposeViewController.swift in Sources */,
+				70B7FCD71AA7F92000224CF2 /* TabBarViewController.swift in Sources */,
+				70B7FCDF1AA7FAE600224CF2 /* AccountViewController.swift in Sources */,
 				70EBEE4F1AA67C8F00E5ACF4 /* AppDelegate.swift in Sources */,
+				70B7FCDB1AA7FACD00224CF2 /* SearchViewController.swift in Sources */,
+				70B7FCD91AA7FAC400224CF2 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
