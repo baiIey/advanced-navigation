@@ -8,8 +8,10 @@
 
 import UIKit
 
-class TabBarViewController: UIViewController {
+class TabBarViewController: UIViewController, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
 
+    var isPresenting: Bool = true
+    
     @IBOutlet weak var contentView: UIView!
     
     // button outlets to control states
@@ -50,6 +52,7 @@ class TabBarViewController: UIViewController {
         
     }
     
+    
     @IBAction func homeButton(sender: AnyObject) {
         var homeView = homeViewController.view
         homeView.frame = contentView.frame
@@ -64,6 +67,12 @@ class TabBarViewController: UIViewController {
         contentView.addSubview(searchViewController.view)
         defaultButtonState()
         searchButton.selected = true
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        var destinationVC = segue.destinationViewController as UIViewController
+        destinationVC.modalPresentationStyle = UIModalPresentationStyle.Custom
+        destinationVC.transitioningDelegate = self
     }
     
     @IBAction func composeButton(sender: AnyObject) {
@@ -92,6 +101,57 @@ class TabBarViewController: UIViewController {
         searchButton.selected = false
         accountButton.selected = false
         trendingButton.selected = false
+    }
+    
+    
+//    Implement the transition delegate methods.
+    
+    func animationControllerForPresentedController(presented: UIViewController!, presentingController presenting: UIViewController!, sourceController source: UIViewController!) -> UIViewControllerAnimatedTransitioning! {
+        isPresenting = true
+        return self
+    }
+    
+    func animationControllerForDismissedController(dismissed: UIViewController!) -> UIViewControllerAnimatedTransitioning! {
+        isPresenting = false
+        return self
+    }
+    
+//    Finally, implement the method that actually controls the transition.
+    
+    func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
+        // The value here should be the duration of the animations scheduled in the animationTransition method
+        return 0.4
+    }
+    
+//    The final step is to implement the animateTransition method above which controls the custom transition. In animateTransition, you have access to a containerView which will contain the views of both the source and destination view controller. You also have access to the source and destination view controller.
+//    
+//    In order to animate the transition, you generally have to add the view of the destination view controller to the container view and schedule the desired animations. In the completion block of the animation, it's important to call completeTransition on the transitionContext to return it to a consistent state.
+//    
+//    For example, to fade the view controller, do the following:
+    
+    func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
+        // TODO: animate the transition in Step 3 below
+        println("animating transition")
+        var containerView = transitionContext.containerView()
+        var toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)!
+        var fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!
+        
+        if (isPresenting) {
+            containerView.addSubview(toViewController.view)
+            toViewController.view.alpha = 0
+            UIView.animateWithDuration(0.4, animations: { () -> Void in
+                toViewController.view.alpha = 1
+                }) { (finished: Bool) -> Void in
+                    transitionContext.completeTransition(true)
+            }
+        } else {
+            UIView.animateWithDuration(0.4, animations: { () -> Void in
+                fromViewController.view.alpha = 0
+                }) { (finished: Bool) -> Void in
+                    transitionContext.completeTransition(true)
+                    fromViewController.view.removeFromSuperview()
+            }
+        }
     }
     
     /*
