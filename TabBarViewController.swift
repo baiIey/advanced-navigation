@@ -23,7 +23,7 @@ class TabBarViewController: UIViewController {
     var searchViewController : SearchViewController!
     var accountViewController : AccountViewController!
     var trendingViewController : TrendingViewController!
-    var composeViewController : ComposeViewController!
+//    var composeViewController : ComposeViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +35,7 @@ class TabBarViewController: UIViewController {
         searchViewController = storyboard.instantiateViewControllerWithIdentifier("searchViewStory") as SearchViewController
         accountViewController = storyboard.instantiateViewControllerWithIdentifier("accountViewStory") as AccountViewController
         trendingViewController = storyboard.instantiateViewControllerWithIdentifier("trendingViewStory") as TrendingViewController
-        composeViewController = storyboard.instantiateViewControllerWithIdentifier("composeViewStory") as ComposeViewController
+//        composeViewController = storyboard.instantiateViewControllerWithIdentifier("composeViewStory") as ComposeViewController
         
         var homeView = homeViewController.view
         homeView.frame = contentView.frame
@@ -67,7 +67,8 @@ class TabBarViewController: UIViewController {
     }
     
     @IBAction func composeButton(sender: AnyObject) {
-        contentView.addSubview(composeViewController.view)
+        performSegueWithIdentifier("composeSegue", sender: self)
+//        contentView.addSubview(composeViewController.view)
     }
 
     @IBAction func accountButton(sender: AnyObject) {

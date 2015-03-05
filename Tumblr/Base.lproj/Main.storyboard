@@ -24,6 +24,7 @@
                                         </state>
                                         <connections>
                                             <action selector="composeButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="4hR-Ii-Obi"/>
+                                            <segue destination="eho-UX-lYq" kind="modal" identifier="composeSegue" modalTransitionStyle="coverVertical" id="eFB-40-Bss"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="UcV-ME-cqy">
@@ -102,39 +103,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="nevermind" id="o04-BY-Pkv">
-                                <rect key="frame" x="0.0" y="515" width="320" height="53"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="video_icon" id="ZdJ-U1-SOP">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="video_icon" id="ZdJ-U1-SOP">
                                 <rect key="frame" x="229" y="296" width="75" height="95"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="quote_icon" id="mbC-tX-5jc">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="quote_icon" id="mbC-tX-5jc">
                                 <rect key="frame" x="229" y="175" width="75" height="96"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="photo_icon" id="rIa-Ag-gkE">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="photo_icon" id="rIa-Ag-gkE">
                                 <rect key="frame" x="123" y="175" width="75" height="95"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="link_icon" id="TBv-er-zxx">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="link_icon" id="TBv-er-zxx">
                                 <rect key="frame" x="16" y="296" width="75" height="95"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="chat_icon" id="Htu-zX-Jnz">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="chat_icon" id="Htu-zX-Jnz">
                                 <rect key="frame" x="123" y="296" width="75" height="96"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="text_icon" id="Cmy-p2-Nl3">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="text_icon" id="Cmy-p2-Nl3">
                                 <rect key="frame" x="16" y="175" width="75" height="95"/>
                                 <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="nevermind" id="o04-BY-Pkv">
+                                <rect key="frame" x="0.0" y="515" width="320" height="53"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="v9g-qy-HLf" appends="YES" id="jox-fH-r5g"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.24313725489999999" green="0.27450980390000002" blue="0.36078431370000003" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ech-nR-a34" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="v9g-qy-HLf" userLabel="Nevermind Tap">
+                    <connections>
+                        <action selector="nevermindTap:" destination="eho-UX-lYq" id="MZK-rf-QFp"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="216" y="518"/>
         </scene>
