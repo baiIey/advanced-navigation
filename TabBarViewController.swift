@@ -30,16 +30,24 @@ class TabBarViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
         var storyboard = UIStoryboard(name: "Main", bundle: nil)
         homeViewController = storyboard.instantiateViewControllerWithIdentifier("homeViewStory") as HomeViewController
         searchViewController = storyboard.instantiateViewControllerWithIdentifier("searchViewStory") as SearchViewController
         accountViewController = storyboard.instantiateViewControllerWithIdentifier("accountViewStory") as AccountViewController
         trendingViewController = storyboard.instantiateViewControllerWithIdentifier("trendingViewStory") as TrendingViewController
+        
+        var homeView = homeViewController.view
+        homeView.frame = contentView.frame
+        contentView.addSubview(homeViewController.view)
+        defaultButtonState()
+        homeButton.selected = true
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        
     }
     
     @IBAction func homeButton(sender: AnyObject) {
