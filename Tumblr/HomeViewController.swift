@@ -10,10 +10,15 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var homeView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        scrollView.contentSize = homeView.image!.size
     }
 
     override func didReceiveMemoryWarning() {

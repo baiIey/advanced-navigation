@@ -10,10 +10,15 @@ import UIKit
 
 class AccountViewController: UIViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var accountView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        scrollView.contentSize = accountView.image!.size
     }
 
     override func didReceiveMemoryWarning() {

@@ -9,11 +9,16 @@
 import UIKit
 
 class TrendingViewController: UIViewController {
-
+    
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var trendingView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        scrollView.contentSize = trendingView.image!.size
     }
 
     override func didReceiveMemoryWarning() {

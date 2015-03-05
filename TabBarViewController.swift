@@ -12,10 +12,19 @@ class TabBarViewController: UIViewController {
 
     @IBOutlet weak var contentView: UIView!
     
+    // button outlets to control states
+    @IBOutlet weak var homeButton: UIButton!
+    @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var composeButton: UIButton!
+    @IBOutlet weak var accountButton: UIButton!
+    @IBOutlet weak var trendingButton: UIButton!
+    
     var homeViewController : HomeViewController!
     var searchViewController : SearchViewController!
     var accountViewController : AccountViewController!
     var trendingViewController : TrendingViewController!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,12 +46,16 @@ class TabBarViewController: UIViewController {
         var homeView = homeViewController.view
         homeView.frame = contentView.frame
         contentView.addSubview(homeViewController.view)
+        defaultButtonState()
+        homeButton.selected = true
     }
     
     @IBAction func searchButton(sender: AnyObject) {
         var searchView = searchViewController.view
         searchView.frame = contentView.frame
         contentView.addSubview(searchViewController.view)
+        defaultButtonState()
+        searchButton.selected = true
     }
     
     @IBAction func composeButton(sender: AnyObject) {
@@ -52,12 +65,23 @@ class TabBarViewController: UIViewController {
         var accountView = accountViewController.view
         accountView.frame = contentView.frame
         contentView.addSubview(accountViewController.view)
+        defaultButtonState()
+        accountButton.selected = true
     }
     
     @IBAction func trendingButton(sender: AnyObject) {
         var trendingView = trendingViewController.view
         trendingView.frame = contentView.frame
         contentView.addSubview(trendingViewController.view)
+        defaultButtonState()
+        trendingButton.selected = true
+    }
+    
+    func defaultButtonState(){ // return all buttons to default state
+        homeButton.selected = false
+        searchButton.selected = false
+        accountButton.selected = false
+        trendingButton.selected = false
     }
     
     /*
