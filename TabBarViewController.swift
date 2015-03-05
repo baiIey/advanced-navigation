@@ -21,6 +21,11 @@ class TabBarViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        var storyboard = UIStoryboard(name: "Main", bundle: nil)
+        homeViewController = storyboard.instantiateViewControllerWithIdentifier("homeViewStory") as HomeViewController
+        searchViewController = storyboard.instantiateViewControllerWithIdentifier("searchViewStory") as SearchViewController
+        accountViewController = storyboard.instantiateViewControllerWithIdentifier("accountViewStory") as AccountViewController
+        trendingViewController = storyboard.instantiateViewControllerWithIdentifier("trendingViewStory") as TrendingViewController
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,18 +34,30 @@ class TabBarViewController: UIViewController {
     }
     
     @IBAction func homeButton(sender: AnyObject) {
+        var homeView = homeViewController.view
+        homeView.frame = contentView.frame
+        contentView.addSubview(homeViewController.view)
     }
     
     @IBAction func searchButton(sender: AnyObject) {
+        var searchView = searchViewController.view
+        searchView.frame = contentView.frame
+        contentView.addSubview(searchViewController.view)
     }
     
     @IBAction func composeButton(sender: AnyObject) {
     }
 
     @IBAction func accountButton(sender: AnyObject) {
+        var accountView = accountViewController.view
+        accountView.frame = contentView.frame
+        contentView.addSubview(accountViewController.view)
     }
     
     @IBAction func trendingButton(sender: AnyObject) {
+        var trendingView = trendingViewController.view
+        trendingView.frame = contentView.frame
+        contentView.addSubview(trendingViewController.view)
     }
     
     /*
