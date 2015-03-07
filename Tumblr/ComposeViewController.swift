@@ -9,11 +9,44 @@
 import UIKit
 
 class ComposeViewController: UIViewController, UIGestureRecognizerDelegate {
-
+    
+    @IBOutlet weak var quoteIcon: UIImageView!
+    @IBOutlet weak var videoIcon: UIImageView!
+    @IBOutlet weak var photoIcon: UIImageView!
+    @IBOutlet weak var linkIcon: UIImageView!
+    @IBOutlet weak var chatIcon: UIImageView!
+    @IBOutlet weak var textIcon: UIImageView!
+    
+    // create variables to store Storyboard positions of each icon
+    var quoteIconOrigin : CGFloat!
+    var videoIconOrigin : CGFloat!
+    var photoIconOrigin : CGFloat!
+    var linkIconOrigin : CGFloat!
+    var chatIconOrigin : CGFloat!
+    var textIconOrigin : CGFloat!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // capture the Storyboard positions of each icon
+        textIconOrigin = textIcon.center.y
+        photoIconOrigin = photoIcon.center.y
+        quoteIconOrigin = quoteIcon.center.y
+        linkIconOrigin = linkIcon.center.y
+        chatIconOrigin = chatIcon.center.y
+        videoIconOrigin = videoIcon.center.y
 
         // Do any additional setup after loading the view.
+        // Animate the buttons into place when the view loads
+        
+//        self.quoteIcon.center.y = 100.0
+//        
+//        UIView.animateWithDuration(6.0, animations: { () -> Void in
+//            println("buttons are animating into place")
+////            self.quoteIcon.center.y = self.quoteIconOrigin
+//            self.quoteIcon.center.y = 100.0
+//            println("\(self.quoteIconOrigin)")
+//        })
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,10 +55,30 @@ class ComposeViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     @IBAction func nevermindTap(sender: UITapGestureRecognizer) {
+        UIView.animateWithDuration(0.4, animations: { () -> Void in
+            print("Animate away from compose")
+            // move icons up the page while tapping Nevermind button
+            self.textIcon.center.y = self.textIconOrigin - 130.0
+            self.photoIcon.center.y = self.photoIconOrigin - 110.0
+            self.quoteIcon.center.y = self.quoteIconOrigin - 120.0
+            self.linkIcon.center.y = self.linkIconOrigin - 125.0
+            self.chatIcon.center.y = self.chatIconOrigin - 100.0
+            self.videoIcon.center.y = self.videoIconOrigin - 110.0
+        })
+        
+        
         dismissViewControllerAnimated(true, completion: nil)
         println("tap")
     }
 
+    @IBAction func iconTap(sender: UITapGestureRecognizer) {
+        println("Icon tap detected")
+        UIView.animateWithDuration(2.0, animations: { () -> Void in
+            println("animating button!")
+            
+        })
+    }
+    
     /*
     // MARK: - Navigation
 

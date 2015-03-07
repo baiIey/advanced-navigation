@@ -106,26 +106,42 @@
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="video_icon" id="ZdJ-U1-SOP">
                                 <rect key="frame" x="229" y="296" width="75" height="95"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="quote_icon" id="mbC-tX-5jc">
-                                <rect key="frame" x="229" y="175" width="75" height="96"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="POS-hz-Plf" appends="YES" id="n58-rd-0IB"/>
+                                </connections>
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="photo_icon" id="rIa-Ag-gkE">
                                 <rect key="frame" x="123" y="175" width="75" height="95"/>
                                 <autoresizingMask key="autoresizingMask"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="tXy-Fz-nnS" appends="YES" id="but-9C-VzH"/>
+                                </connections>
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="link_icon" id="TBv-er-zxx">
                                 <rect key="frame" x="16" y="296" width="75" height="95"/>
                                 <autoresizingMask key="autoresizingMask"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="kS7-06-9J5" appends="YES" id="izH-8P-kyg"/>
+                                </connections>
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="chat_icon" id="Htu-zX-Jnz">
                                 <rect key="frame" x="123" y="296" width="75" height="96"/>
                                 <autoresizingMask key="autoresizingMask"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="O96-nM-KRI" appends="YES" id="Jwd-vg-1SW"/>
+                                </connections>
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="text_icon" id="Cmy-p2-Nl3">
                                 <rect key="frame" x="16" y="175" width="75" height="95"/>
                                 <autoresizingMask key="autoresizingMask"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="dPV-oX-i7C" appends="YES" id="msG-gS-7Dq"/>
+                                </connections>
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="nevermind" id="o04-BY-Pkv">
                                 <rect key="frame" x="0.0" y="515" width="320" height="53"/>
@@ -135,14 +151,60 @@
                                     <outletCollection property="gestureRecognizers" destination="v9g-qy-HLf" appends="YES" id="jox-fH-r5g"/>
                                 </connections>
                             </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="quote_icon" id="mbC-tX-5jc">
+                                <rect key="frame" x="229" y="175" width="75" height="96"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="t3X-pB-WS0" appends="YES" id="CC8-iY-8le"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.24313725489999999" green="0.27450980390000002" blue="0.36078431370000003" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="chatIcon" destination="Htu-zX-Jnz" id="RsU-x8-RRy"/>
+                        <outlet property="linkIcon" destination="TBv-er-zxx" id="ll4-xH-Qlz"/>
+                        <outlet property="photoIcon" destination="rIa-Ag-gkE" id="cdX-db-J5A"/>
+                        <outlet property="quoteIcon" destination="mbC-tX-5jc" id="BOU-me-MEg"/>
+                        <outlet property="textIcon" destination="Cmy-p2-Nl3" id="EX2-GU-LtX"/>
+                        <outlet property="videoIcon" destination="ZdJ-U1-SOP" id="Pn7-jG-UOY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ech-nR-a34" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="v9g-qy-HLf" userLabel="Nevermind Tap">
                     <connections>
                         <action selector="nevermindTap:" destination="eho-UX-lYq" id="MZK-rf-QFp"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="t3X-pB-WS0">
+                    <connections>
+                        <action selector="iconTap:" destination="eho-UX-lYq" id="Z8i-vX-OAO"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="tXy-Fz-nnS">
+                    <connections>
+                        <action selector="iconTap:" destination="eho-UX-lYq" id="pZ5-Y7-gXi"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="dPV-oX-i7C">
+                    <connections>
+                        <action selector="iconTap:" destination="eho-UX-lYq" id="BO7-Qw-hcg"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="POS-hz-Plf">
+                    <connections>
+                        <action selector="iconTap:" destination="eho-UX-lYq" id="aLf-LU-AFO"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="O96-nM-KRI">
+                    <connections>
+                        <action selector="iconTap:" destination="eho-UX-lYq" id="cqB-Jc-6dc"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="kS7-06-9J5">
+                    <connections>
+                        <action selector="iconTap:" destination="eho-UX-lYq" id="jWT-Qh-fzF"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -194,6 +256,53 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oon-k0-ezh">
+                                        <rect key="frame" x="261" y="29" width="59" height="28"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="logInButton:" destination="uVw-yO-zWY" eventType="touchUpInside" id="dc5-yr-gqa"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" id="0UY-8m-PLH" userLabel="loginContainer">
+                                        <rect key="frame" x="10" y="216" width="300" height="132"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="login_form" id="PNs-Sf-PqP">
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="132"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </imageView>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="email" minimumFontSize="17" id="ce2-zi-Khy">
+                                                <rect key="frame" x="0.0" y="8" width="300" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" minimumFontSize="17" id="EpD-HR-C2q">
+                                                <rect key="frame" x="0.0" y="51" width="300" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="WUz-El-r7f">
+                                                <rect key="frame" x="51" y="94" width="46" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yNE-8w-muJ">
+                                                <rect key="frame" x="205" y="94" width="46" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
                                 </subviews>
                             </scrollView>
                         </subviews>
@@ -201,6 +310,8 @@
                     </view>
                     <connections>
                         <outlet property="homeView" destination="Apj-D4-xfe" id="hP6-8q-E1G"/>
+                        <outlet property="loginContainer" destination="0UY-8m-PLH" id="wvN-Wx-0wE"/>
+                        <outlet property="loginForm" destination="PNs-Sf-PqP" id="JMr-ya-mgX"/>
                         <outlet property="scrollView" destination="MLi-50-tKT" id="je2-qq-Qx7"/>
                     </connections>
                 </viewController>
@@ -273,6 +384,20 @@
             </objects>
             <point key="canvasLocation" x="1124" y="1221"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="cWn-UZ-W0G">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="otn-VK-p3A" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="cqU-ad-gee">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F5z-cb-lI1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
     </scenes>
     <resources>
         <image name="account" width="320" height="524"/>
@@ -284,6 +409,7 @@
         <image name="home_icon" width="35" height="35"/>
         <image name="home_selected_icon" width="35" height="35"/>
         <image name="link_icon" width="75" height="95"/>
+        <image name="login_form" width="300" height="132"/>
         <image name="nevermind" width="320" height="53"/>
         <image name="photo_icon" width="75" height="95"/>
         <image name="quote_icon" width="75" height="96"/>

@@ -12,6 +12,8 @@ class HomeViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var homeView: UIImageView!
+    @IBOutlet weak var loginForm: UIImageView!
+    @IBOutlet weak var loginContainer: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +28,8 @@ class HomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func logInButton(sender: AnyObject) {
+    }
 
     /*
     // MARK: - Navigation

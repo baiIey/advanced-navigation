@@ -131,7 +131,7 @@ class TabBarViewController: UIViewController, UIViewControllerTransitioningDeleg
     
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
         // TODO: animate the transition in Step 3 below
-        println("animating transition")
+        println("animating compose transition")
         var containerView = transitionContext.containerView()
         var toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)!
         var fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!
