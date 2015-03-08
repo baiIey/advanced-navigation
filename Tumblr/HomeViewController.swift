@@ -15,12 +15,19 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var loginForm: UIImageView!
     @IBOutlet weak var loginContainer: UIView!
     
+    var loginContainerOrigin : CGFloat!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loginContainer.alpha = 0.0
+        loginContainerOrigin = loginContainer.center.y
 
         // Do any additional setup after loading the view.
         
         scrollView.contentSize = homeView.image!.size
+        loginContainerOrigin = loginContainer.center.y
+        loginContainer.alpha = 0
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,8 +36,25 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func logInButton(sender: AnyObject) {
+        // move the login container down and fade it in
+        loginContainer.center.y = loginContainerOrigin - 10
+        
+        UIView.animateWithDuration(0.4, animations: { () -> Void in
+//            self.loginContainer.hidden = !self.loginContainer.hidden
+//            println("\(self.loginContainer.hidden)")
+                self.loginContainer.alpha = 1.0
+                self.loginContainer.center.y = self.loginContainerOrigin
+        })
     }
 
+    @IBAction func logInFormButton(sender: AnyObject) {
+                // move the login container down and fade it out
+        loginContainer.center.y = loginContainerOrigin
+        UIView.animateWithDuration(0.4, animations: { () -> Void in
+            self.loginContainer.alpha = 0.0
+            self.loginContainer.center.y = self.loginContainerOrigin + 10
+        })
+    }
     /*
     // MARK: - Navigation
 
