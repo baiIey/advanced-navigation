@@ -25,6 +25,8 @@ class ComposeViewController: UIViewController, UIGestureRecognizerDelegate {
     var chatIconOrigin : CGFloat!
     var textIconOrigin : CGFloat!
     
+    var selectedIcon : UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -72,11 +74,15 @@ class ComposeViewController: UIViewController, UIGestureRecognizerDelegate {
     }
 
     @IBAction func iconTap(sender: UITapGestureRecognizer) {
+        selectedIcon = sender.view as UIImageView
+        var selectedIconOrigin = selectedIcon.image!.size
+        
         println("Icon tap detected")
-        UIView.animateWithDuration(2.0, animations: { () -> Void in
+        UIView.animateWithDuration(0.5, animations: { () -> Void in
             println("animating button!")
-            
+
         })
+        
     }
     
     /*

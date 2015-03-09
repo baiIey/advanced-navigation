@@ -219,21 +219,41 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="NlH-99-szq">
-                                <rect key="frame" x="0.0" y="0.0" width="360" height="564"/>
+                                <rect key="frame" x="0.0" y="20" width="360" height="504"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="search_feed" id="icK-cr-dv0">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="trending_feed" id="pHN-yf-Fxc">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1217"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
                                 </subviews>
                             </scrollView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="loading-1" id="cxf-fs-UBa">
+                                <rect key="frame" x="129" y="275" width="61" height="19"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="loading-2" id="2Si-hM-4Rg">
+                                <rect key="frame" x="129" y="275" width="61" height="19"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="loading-3" id="ft9-Kr-CgX">
+                                <rect key="frame" x="129" y="275" width="61" height="19"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" id="BXt-lx-VdT" userLabel="Notification Bar">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.22352941179999999" green="0.2901960784" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.20392156859999999" green="0.23921568630000001" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
+                        <outlet property="loading1" destination="cxf-fs-UBa" id="Pd8-If-Fgc"/>
+                        <outlet property="loading2" destination="2Si-hM-4Rg" id="8nv-ES-tgO"/>
+                        <outlet property="loading3" destination="ft9-Kr-CgX" id="vJG-RN-IFe"/>
                         <outlet property="scrollView" destination="NlH-99-szq" id="BvF-X1-SRn"/>
-                        <outlet property="searchFeedView" destination="icK-cr-dv0" id="tNt-YQ-kka"/>
+                        <outlet property="searchFeedView" destination="pHN-yf-Fxc" id="lli-6l-LJ3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EP7-RJ-bDe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -315,6 +335,10 @@
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.20392156859999999" green="0.23921568630000001" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Ket-MS-kcP" appends="YES" id="e5G-Dp-CXW"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="homeView" destination="Apj-D4-xfe" id="hP6-8q-E1G"/>
@@ -324,6 +348,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Ja-XI-Hc0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Ket-MS-kcP">
+                    <connections>
+                        <action selector="onViewTap:" destination="uVw-yO-zWY" id="715-Zs-FEK"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-253" y="1221"/>
         </scene>
@@ -369,8 +398,8 @@
                                 <rect key="frame" x="0.0" y="20" width="360" height="504"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="trending_feed" id="3tT-4y-4EI">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1217"/>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="trending" id="uDi-kQ-LVb">
+                                        <rect key="frame" x="10" y="139" width="301" height="225"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
                                 </subviews>
@@ -385,7 +414,7 @@
                     </view>
                     <connections>
                         <outlet property="scrollView" destination="h2j-ie-hNe" id="pZd-bo-K6m"/>
-                        <outlet property="trendingView" destination="3tT-4y-4EI" id="o9I-Te-tFy"/>
+                        <outlet property="trendingView" destination="uDi-kQ-LVb" id="WGS-7R-gDc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aIn-23-tit" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -403,14 +432,17 @@
         <image name="home_icon" width="35" height="35"/>
         <image name="home_selected_icon" width="35" height="35"/>
         <image name="link_icon" width="75" height="95"/>
+        <image name="loading-1" width="61" height="19"/>
+        <image name="loading-2" width="61" height="19"/>
+        <image name="loading-3" width="61" height="19"/>
         <image name="login_form" width="300" height="132"/>
         <image name="nevermind" width="320" height="53"/>
         <image name="photo_icon" width="75" height="95"/>
         <image name="quote_icon" width="75" height="96"/>
-        <image name="search_feed" width="320" height="524"/>
         <image name="search_icon" width="35" height="35"/>
         <image name="search_selected_icon" width="35" height="35"/>
         <image name="text_icon" width="75" height="95"/>
+        <image name="trending" width="301" height="225"/>
         <image name="trending_feed" width="320" height="1217"/>
         <image name="trending_icon" width="35" height="35"/>
         <image name="trending_selected_icon" width="35" height="35"/>
