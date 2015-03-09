@@ -79,6 +79,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="explore_popup" id="Hu1-XI-dlD">
+                                <rect key="frame" x="1" y="456" width="185" height="77"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -86,6 +90,7 @@
                         <outlet property="accountButton" destination="UcV-ME-cqy" id="brz-5b-TSe"/>
                         <outlet property="composeButton" destination="jib-Si-ws1" id="qvG-DM-c1f"/>
                         <outlet property="contentView" destination="qdj-1t-ggG" id="YpQ-wO-WcM"/>
+                        <outlet property="explorePopUp" destination="Hu1-XI-dlD" id="HBn-h5-irN"/>
                         <outlet property="homeButton" destination="piT-rM-LrI" id="DS6-aR-vh1"/>
                         <outlet property="searchButton" destination="iAR-9e-mkd" id="Yib-L9-KJl"/>
                         <outlet property="trendingButton" destination="Qsv-mu-KgA" id="PAP-02-oIO"/>
@@ -246,7 +251,7 @@
                                 <color key="backgroundColor" red="0.22352941179999999" green="0.2901960784" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.20392156859999999" green="0.23921568630000001" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.1764705882352941" green="0.27450980392156865" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
                         <outlet property="loading1" destination="cxf-fs-UBa" id="Pd8-If-Fgc"/>
@@ -375,7 +380,7 @@
                                 </subviews>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="0.24313725489999999" green="0.27450980390000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.1764705882352941" green="0.27450980392156865" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
                         <outlet property="accountView" destination="v25-dO-dNC" id="b0V-kz-DWU"/>
@@ -410,7 +415,7 @@
                                 <color key="backgroundColor" red="0.22352941176470587" green="0.29019607843137252" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.24313725490196078" green="0.27450980392156865" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="scrollView" destination="h2j-ie-hNe" id="pZd-bo-K6m"/>
@@ -428,6 +433,7 @@
         <image name="account_selected_icon" width="35" height="35"/>
         <image name="chat_icon" width="75" height="96"/>
         <image name="compose_button" width="50" height="35"/>
+        <image name="explore_popup" width="185" height="77"/>
         <image name="home" width="320" height="524"/>
         <image name="home_icon" width="35" height="35"/>
         <image name="home_selected_icon" width="35" height="35"/>

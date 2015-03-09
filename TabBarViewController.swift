@@ -20,6 +20,8 @@ class TabBarViewController: UIViewController, UIViewControllerTransitioningDeleg
     @IBOutlet weak var composeButton: UIButton!
     @IBOutlet weak var accountButton: UIButton!
     @IBOutlet weak var trendingButton: UIButton!
+    // explore pop-up
+    @IBOutlet weak var explorePopUp: UIImageView!
     
     var homeViewController : HomeViewController!
     var searchViewController : SearchViewController!
@@ -31,6 +33,15 @@ class TabBarViewController: UIViewController, UIViewControllerTransitioningDeleg
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        // set-up explore pop-up visibility and animation
+        explorePopUp.alpha = 1
+        explorePopUp.hidden = false
+        var explorePopUpOrigin = explorePopUp.center.y
+        UIView.animateWithDuration(1.0, delay: 0, options: .Repeat | .Autoreverse, animations: { () -> Void in
+            self.explorePopUp.center.y = explorePopUpOrigin + 5
+        }) { (Bool) -> Void in
+        }
         
         var storyboard = UIStoryboard(name: "Main", bundle: nil)
         homeViewController = storyboard.instantiateViewControllerWithIdentifier("homeViewStory") as HomeViewController
@@ -67,6 +78,7 @@ class TabBarViewController: UIViewController, UIViewControllerTransitioningDeleg
         contentView.addSubview(searchViewController.view)
         defaultButtonState()
         searchButton.selected = true
+        explorePopUp.hidden = true // hide explore pop-up when user goes to search
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
