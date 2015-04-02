@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>60C57686-F137-46B7-9536-5D6D8A7258EB</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Tumblr</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>3B94F73A4F6E79043962C86F0B55396E643535A8</key>
+		<string>https://github.com/baiIey/advanced-navigation.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Tumblr.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>3B94F73A4F6E79043962C86F0B55396E643535A8</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/baiIey/advanced-navigation.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>3B94F73A4F6E79043962C86F0B55396E643535A8</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>3B94F73A4F6E79043962C86F0B55396E643535A8</string>
+			<key>IDESourceControlWCCName</key>
+			<string>advanced-navigation</string>
+		</dict>
+	</array>
+</dict>
+</plist>
