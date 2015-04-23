@@ -30,42 +30,42 @@ class SearchViewController: UIViewController {
         loading2.alpha = 0
         loading3.alpha = 0
         
-        delay(0.3, { () -> () in
+        delay(0.3, closure: { () -> () in
             self.loading1.alpha = 0
             self.loading2.alpha = 1
             self.loading3.alpha = 0
         })
-        delay(0.6, { () -> () in
+        delay(0.6, closure: { () -> () in
             self.loading1.alpha = 0
             self.loading2.alpha = 0
             self.loading3.alpha = 1
         })
-        delay(1.0, { () -> () in
+        delay(1.0, closure: { () -> () in
             self.loading1.alpha = 1
             self.loading2.alpha = 0
             self.loading3.alpha = 0
         })
-        delay(1.3, { () -> () in
+        delay(1.3, closure: { () -> () in
             self.loading1.alpha = 0
             self.loading2.alpha = 1
             self.loading3.alpha = 0
         })
-        delay(1.6, { () -> () in
+        delay(1.6, closure: { () -> () in
             self.loading1.alpha = 0
             self.loading2.alpha = 0
             self.loading3.alpha = 1
         })
-        delay(2.0, { () -> () in
+        delay(2.0, closure: { () -> () in
             self.loading1.alpha = 1
             self.loading2.alpha = 0
             self.loading3.alpha = 0
         })
-        delay(2.1, { () -> () in
+        delay(2.1, closure: { () -> () in
             self.loading1.alpha = 0
             self.loading2.alpha = 0
             self.loading3.alpha = 0
         })
-        delay(2.3, { () -> () in
+        delay(2.3, closure: { () -> () in
             UIView.animateWithDuration(0.4, animations: { () -> Void in
                 println("fade in search results")
                 self.searchFeedView.alpha = 1

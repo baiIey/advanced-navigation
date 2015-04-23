@@ -74,7 +74,7 @@ class ComposeViewController: UIViewController, UIGestureRecognizerDelegate {
     }
 
     @IBAction func iconTap(sender: UITapGestureRecognizer) {
-        selectedIcon = sender.view as UIImageView
+        selectedIcon = sender.view as! UIImageView
         var selectedIconOrigin = selectedIcon.image!.size
         
         println("Icon tap detected")

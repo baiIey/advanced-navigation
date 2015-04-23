@@ -44,10 +44,10 @@ class TabBarViewController: UIViewController, UIViewControllerTransitioningDeleg
         }
         
         var storyboard = UIStoryboard(name: "Main", bundle: nil)
-        homeViewController = storyboard.instantiateViewControllerWithIdentifier("homeViewStory") as HomeViewController
-        searchViewController = storyboard.instantiateViewControllerWithIdentifier("searchViewStory") as SearchViewController
-        accountViewController = storyboard.instantiateViewControllerWithIdentifier("accountViewStory") as AccountViewController
-        trendingViewController = storyboard.instantiateViewControllerWithIdentifier("trendingViewStory") as TrendingViewController
+        homeViewController = storyboard.instantiateViewControllerWithIdentifier("homeViewStory") as! HomeViewController
+        searchViewController = storyboard.instantiateViewControllerWithIdentifier("searchViewStory") as! SearchViewController
+        accountViewController = storyboard.instantiateViewControllerWithIdentifier("accountViewStory") as! AccountViewController
+        trendingViewController = storyboard.instantiateViewControllerWithIdentifier("trendingViewStory") as! TrendingViewController
 //        composeViewController = storyboard.instantiateViewControllerWithIdentifier("composeViewStory") as ComposeViewController
         
         var homeView = homeViewController.view
@@ -82,7 +82,7 @@ class TabBarViewController: UIViewController, UIViewControllerTransitioningDeleg
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var destinationVC = segue.destinationViewController as UIViewController
+        var destinationVC = segue.destinationViewController as! UIViewController
         destinationVC.modalPresentationStyle = UIModalPresentationStyle.Custom
         destinationVC.transitioningDelegate = self
     }
@@ -118,12 +118,12 @@ class TabBarViewController: UIViewController, UIViewControllerTransitioningDeleg
     
 //    Implement the transition delegate methods.
     
-    func animationControllerForPresentedController(presented: UIViewController!, presentingController presenting: UIViewController!, sourceController source: UIViewController!) -> UIViewControllerAnimatedTransitioning! {
+    func animationControllerForPresentedController(presented: UIViewController?!, presentingController presenting: UIViewController!, sourceController source: UIViewController!) -> UIViewControllerAnimatedTransitioning! {
         isPresenting = true
         return self
     }
     
-    func animationControllerForDismissedController(dismissed: UIViewController!) -> UIViewControllerAnimatedTransitioning! {
+    func animationControllerForDismissedController(dismissed: UIViewController?!) -> UIViewControllerAnimatedTransitioning! {
         isPresenting = false
         return self
     }
