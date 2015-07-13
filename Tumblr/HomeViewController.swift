@@ -75,14 +75,14 @@ class HomeViewController: UIViewController {
     
     // hide the keyboard when tapping outside of the login container
     @IBAction func onViewTap(sender: UITapGestureRecognizer) {
-        println("Tap view")
+        print("Tap view")
         self.view.endEditing(true) // dimiss keyboard
     }
     
     
     // define methods to call when the keyboard is shown and hidden
     func keyboardWillShow(notification: NSNotification!) {
-        println("Show keyboard")
+        print("Show keyboard")
         
         var userInfo = notification.userInfo!
         
@@ -94,7 +94,7 @@ class HomeViewController: UIViewController {
         var curveValue = userInfo[UIKeyboardAnimationCurveUserInfoKey] as! NSNumber
         var animationCurve = curveValue.integerValue
         
-        UIView.animateWithDuration(animationDuration, delay: 0.0, options: UIViewAnimationOptions(UInt(animationCurve << 16)), animations: {
+        UIView.animateWithDuration(animationDuration, delay: 0.0, options: UIViewAnimationOptions(rawValue: UInt(animationCurve << 16)), animations: {
             
             self.loginContainer.center.y = self.loginContainerOrigin - 50
             
@@ -105,7 +105,7 @@ class HomeViewController: UIViewController {
     }
     
     func keyboardWillHide(notification: NSNotification!) {
-        println("Hide keyboard")
+        print("Hide keyboard")
         var userInfo = notification.userInfo!
         
         // Get the keyboard height and width from the notification
@@ -116,7 +116,7 @@ class HomeViewController: UIViewController {
         var curveValue = userInfo[UIKeyboardAnimationCurveUserInfoKey] as! NSNumber
         var animationCurve = curveValue.integerValue
         
-        UIView.animateWithDuration(animationDuration, delay: 0.0, options: UIViewAnimationOptions(UInt(animationCurve << 16)), animations: {
+        UIView.animateWithDuration(animationDuration, delay: 0.0, options: UIViewAnimationOptions(rawValue: UInt(animationCurve << 16)), animations: {
             
             self.loginContainer.center.y = self.loginContainerOrigin
             

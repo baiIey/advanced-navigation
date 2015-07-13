@@ -23,7 +23,7 @@ class SearchViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        println("search view loaded")
+        print("search view loaded")
         
         searchFeedView.alpha = 0
         loading1.alpha = 1
@@ -67,7 +67,7 @@ class SearchViewController: UIViewController {
         })
         delay(2.3, closure: { () -> () in
             UIView.animateWithDuration(0.4, animations: { () -> Void in
-                println("fade in search results")
+                print("fade in search results")
                 self.searchFeedView.alpha = 1
             })
 

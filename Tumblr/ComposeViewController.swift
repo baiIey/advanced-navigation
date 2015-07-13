@@ -58,7 +58,7 @@ class ComposeViewController: UIViewController, UIGestureRecognizerDelegate {
     
     @IBAction func nevermindTap(sender: UITapGestureRecognizer) {
         UIView.animateWithDuration(0.4, animations: { () -> Void in
-            print("Animate away from compose")
+            print("Animate away from compose", appendNewline: false)
             // move icons up the page while tapping Nevermind button
             self.textIcon.center.y = self.textIconOrigin - 130.0
             self.photoIcon.center.y = self.photoIconOrigin - 110.0
@@ -70,16 +70,16 @@ class ComposeViewController: UIViewController, UIGestureRecognizerDelegate {
         
         
         dismissViewControllerAnimated(true, completion: nil)
-        println("tap")
+        print("tap")
     }
 
     @IBAction func iconTap(sender: UITapGestureRecognizer) {
         selectedIcon = sender.view as! UIImageView
         var selectedIconOrigin = selectedIcon.image!.size
         
-        println("Icon tap detected")
+        print("Icon tap detected")
         UIView.animateWithDuration(0.5, animations: { () -> Void in
-            println("animating button!")
+            print("animating button!")
 
         })
         

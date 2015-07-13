@@ -37,20 +37,20 @@ class TabBarViewController: UIViewController, UIViewControllerTransitioningDeleg
         // set-up explore pop-up visibility and animation
         explorePopUp.alpha = 1
         explorePopUp.hidden = false
-        var explorePopUpOrigin = explorePopUp.center.y
-        UIView.animateWithDuration(1.0, delay: 0, options: .Repeat | .Autoreverse, animations: { () -> Void in
+        let explorePopUpOrigin = explorePopUp.center.y
+        UIView.animateWithDuration(1.0, delay: 0, options: [.Repeat, .Autoreverse], animations: { () -> Void in
             self.explorePopUp.center.y = explorePopUpOrigin + 5
         }) { (Bool) -> Void in
         }
         
-        var storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         homeViewController = storyboard.instantiateViewControllerWithIdentifier("homeViewStory") as! HomeViewController
         searchViewController = storyboard.instantiateViewControllerWithIdentifier("searchViewStory") as! SearchViewController
         accountViewController = storyboard.instantiateViewControllerWithIdentifier("accountViewStory") as! AccountViewController
         trendingViewController = storyboard.instantiateViewControllerWithIdentifier("trendingViewStory") as! TrendingViewController
 //        composeViewController = storyboard.instantiateViewControllerWithIdentifier("composeViewStory") as ComposeViewController
         
-        var homeView = homeViewController.view
+        let homeView = homeViewController.view
         homeView.frame = contentView.frame
         contentView.addSubview(homeViewController.view)
         defaultButtonState()
@@ -65,7 +65,7 @@ class TabBarViewController: UIViewController, UIViewControllerTransitioningDeleg
     
     
     @IBAction func homeButton(sender: AnyObject) {
-        var homeView = homeViewController.view
+        let homeView = homeViewController.view
         homeView.frame = contentView.frame
         contentView.addSubview(homeViewController.view)
         defaultButtonState()
@@ -73,7 +73,7 @@ class TabBarViewController: UIViewController, UIViewControllerTransitioningDeleg
     }
     
     @IBAction func searchButton(sender: AnyObject) {
-        var searchView = searchViewController.view
+        let searchView = searchViewController.view
         searchView.frame = contentView.frame
         contentView.addSubview(searchViewController.view)
         defaultButtonState()
@@ -82,7 +82,7 @@ class TabBarViewController: UIViewController, UIViewControllerTransitioningDeleg
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var destinationVC = segue.destinationViewController as! UIViewController
+        let destinationVC = segue.destinationViewController as UIViewController
         destinationVC.modalPresentationStyle = UIModalPresentationStyle.Custom
         destinationVC.transitioningDelegate = self
     }
@@ -93,7 +93,7 @@ class TabBarViewController: UIViewController, UIViewControllerTransitioningDeleg
     }
 
     @IBAction func accountButton(sender: AnyObject) {
-        var accountView = accountViewController.view
+        let accountView = accountViewController.view
         accountView.frame = contentView.frame
         contentView.addSubview(accountViewController.view)
         defaultButtonState()
@@ -101,7 +101,7 @@ class TabBarViewController: UIViewController, UIViewControllerTransitioningDeleg
     }
     
     @IBAction func trendingButton(sender: AnyObject) {
-        var trendingView = trendingViewController.view
+        let trendingView = trendingViewController.view
         trendingView.frame = contentView.frame
         contentView.addSubview(trendingViewController.view)
         defaultButtonState()
@@ -130,7 +130,7 @@ class TabBarViewController: UIViewController, UIViewControllerTransitioningDeleg
     
 //    Finally, implement the method that actually controls the transition.
     
-    func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
+    func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
         // The value here should be the duration of the animations scheduled in the animationTransition method
         return 0.4
     }
@@ -143,13 +143,13 @@ class TabBarViewController: UIViewController, UIViewControllerTransitioningDeleg
     
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
         // TODO: animate the transition in Step 3 below
-        println("animating compose transition")
-        var containerView = transitionContext.containerView()
-        var toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)!
-        var fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!
+        print("animating compose transition")
+        let containerView = transitionContext.containerView()
+        let toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)!
+        let fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!
         
         if (isPresenting) {
-            containerView.addSubview(toViewController.view)
+            containerView!.addSubview(toViewController.view)
             toViewController.view.alpha = 0
             UIView.animateWithDuration(0.4, animations: { () -> Void in
                 toViewController.view.alpha = 1
